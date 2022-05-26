@@ -67,7 +67,7 @@ i {
   const textoA = document.querySelector('[anime-texto]')
 const HtextoA = textoA.offsetTop
 window.addEventListener('scroll', () => {
-  const HWindow = window.pageYOffset + ((window.innerHeight * 3) / 4)
+  const HWindow = window.pageYOffset + ((window.innerHeight * 2) / 4)
   if(HWindow > HtextoA) {
     textoA.classList.add('show')
   } else {
