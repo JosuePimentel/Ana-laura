@@ -1,0 +1,73 @@
+<p class="" anime-texto>lorem ipsum loreme ipsumlorem ipsum loreme ipsum.</p>
+
+<i class="esq">&#128150;</i>
+<i class="dir">&#128150;</i>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', normal;
+}
+
+body {
+  min-height: 800vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #F19CA2;
+}
+
+p {
+  transform: translateX(-50px);
+  opacity: 0;
+  position: absolute;
+  top: 80%;
+  transition: all .5s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+i.esq {
+  left: 80px;
+}
+
+i.dir {
+  right: 80px;
+  animation-delay: 10s;
+}
+
+i {
+  position: absolute;
+  bottom: 0;
+  animation: heart 20s infinite;
+}
+
+@keyframes heart {
+  0%,100% {bottom: 0;}
+  10%, 90% {bottom: 20%;}
+  20%, 80% {bottom: 40%;}
+  30%, 70% {bottom: 60%;}
+  40%, 60% {bottom: 80%;}
+  50% {bottom: 100%;}
+}
+</style>
+
+<script>
+  const textoA = document.querySelector('[anime-texto]')
+const HtextoA = textoA.offsetTop
+window.addEventListener('scroll', () => {
+  const HWindow = window.pageYOffset + ((window.innerHeight * 3) / 4)
+  if(HWindow > HtextoA) {
+    textoA.classList.add('show')
+  } else {
+    textoA.classList.remove('show')
+  }
+})
+</script>
